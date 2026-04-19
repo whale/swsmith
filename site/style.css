@@ -153,18 +153,8 @@ a { color: inherit; }
   top: 0;
   z-index: 10;
   background: var(--bg);
-  margin: 0 calc(-1 * var(--page-pad));
+  margin: 0 calc(-1 * var(--page-pad)) clamp(2rem, 4vw, 3.5rem);
   padding: 1.25rem var(--page-pad);
-}
-.photography-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: clamp(3.5rem, 6vw, 5.5rem);
-  background: linear-gradient(to bottom, var(--bg), transparent);
-  pointer-events: none;
 }
 .photography-header-inner {
   display: flex;
@@ -207,27 +197,33 @@ a { color: inherit; }
 /* ---------- masonry grid ---------- */
 
 .grid {
-  column-count: 6;
+  position: relative;
   column-gap: var(--grid-gap);
 }
 .grid-item {
-  break-inside: avoid;
-  margin-bottom: var(--grid-gap);
+  position: absolute;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--placeholder);
   cursor: zoom-in;
   display: block;
-  width: 100%;
+  transition:
+    top 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .grid-item img {
   width: 100%;
   height: auto;
   display: block;
-  transition: opacity 0.2s ease, transform 0.4s ease;
+  transition: opacity 320ms cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s ease;
 }
 .grid-item:hover img { opacity: 0.85; transform: scale(1.01); }
-.grid-item.is-hidden { display: none; }
+.grid-item.is-hidden {
+  pointer-events: none;
+  cursor: default;
+  background: transparent;
+}
+.grid-item.is-hidden img { opacity: 0.1; }
 
 /* ---------- lightbox ---------- */
 
@@ -263,33 +259,37 @@ a { color: inherit; }
 .lightbox-next {
   position: absolute;
   color: var(--text);
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   display: grid;
   place-items: center;
-  transition: color 0.15s ease, transform 0.15s ease;
+  border-radius: 50%;
+  background-color: transparent;
+  transition:
+    color 260ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 260ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .lightbox-close:hover,
 .lightbox-prev:hover,
-.lightbox-next:hover { color: var(--text-strong); transform: scale(1.1); }
+.lightbox-next:hover {
+  color: var(--text-strong);
+  background-color: rgba(255, 255, 255, 0.05);
+}
 
-.lightbox-close { top: clamp(1rem, 2vw, 2rem); right: clamp(1rem, 2vw, 2rem); }
-.lightbox-prev { left: clamp(1rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); }
-.lightbox-next { right: clamp(1rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); }
-.lightbox-prev:hover { transform: translateY(-50%) scale(1.1); }
-.lightbox-next:hover { transform: translateY(-50%) scale(1.1); }
+.lightbox-close { top: calc(clamp(1rem, 2vw, 2rem) - 15px); right: calc(clamp(1rem, 2vw, 2rem) - 15px); }
+.lightbox-prev { left: calc(clamp(1rem, 2vw, 2rem) - 15px); top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: calc(clamp(1rem, 2vw, 2rem) - 15px); top: 50%; transform: translateY(-50%); }
 
 body.lightbox-open { overflow: hidden; }
 
+/* Hide Pinterest browser-extension hover buttons */
+[data-pin-log],
+[class*="PinItButton"],
+[class*="pinterest-save-button"],
+span[class^="PIN_"],
+div[class^="PIN_"] { display: none !important; }
+
 /* ---------- responsive ---------- */
-
-@media (max-width: 1280px) {
-  .grid { column-count: 5; }
-}
-
-@media (max-width: 1024px) {
-  .grid { column-count: 4; }
-}
 
 @media (max-width: 780px) {
   .hero {
@@ -303,24 +303,54 @@ body.lightbox-open { overflow: hidden; }
     row-gap: 1.5rem;
   }
   .bio { gap: 1.5em; }
-  .grid { column-count: 3; }
   .photography-header {
     position: static;
     background: transparent;
     margin: 0 0 clamp(2rem, 4vw, 3.5rem);
     padding: 0;
   }
-  .photography-header::after { display: none; }
   .photography-header-inner {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
     gap: 1.5rem;
   }
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    min-width: 0;
+    width: 100%;
+    mask-image: linear-gradient(to right, black 0, black calc(100% - 40px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 0, black calc(100% - 40px), transparent 100%);
+    transition: mask-image 200ms ease, -webkit-mask-image 200ms ease;
+  }
+  .filters.at-end {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .lightbox-prev, .lightbox-next {
+    top: auto;
+    bottom: 60px;
+    transform: none;
+  }
+  .lightbox-prev {
+    left: 25%;
+    transform: translateX(-50%);
+  }
+  .lightbox-next {
+    right: 25%;
+    left: auto;
+    transform: translateX(50%);
+  }
+  .lightbox-prev:hover { transform: translateX(-50%); }
+  .lightbox-next:hover { transform: translateX(50%); }
 }
 
 @media (max-width: 540px) {
   body { font-size: 16px; }
-  .grid { column-count: 2; }
   .name, .title, .section-eyebrow, .section-title {
     font-size: clamp(1.8rem, 8.4vw, 2.1rem);
   }
