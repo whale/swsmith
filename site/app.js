@@ -107,6 +107,8 @@
     applyFilter(false);
   }
 
+  const itemJitter = new WeakMap();
+
   function applyFilter(animate = true) {
     const items = [...grid.querySelectorAll(".grid-item")];
     items.sort((a, b) => Number(a.dataset.index) - Number(b.dataset.index));
@@ -130,24 +132,28 @@
       return;
     }
 
-    const STAGGER = 220;
-    const FADE = 180;
+    const STAGGER = 180;
+    const FADE = 160;
+    const JITTER = 240;
+    const TOTAL = STAGGER + JITTER + FADE;
     const maxDist = Math.hypot(window.innerWidth, window.innerHeight);
+    items.forEach(it => {
+      if (!itemJitter.has(it)) itemJitter.set(it, Math.random() * JITTER);
+    });
     const delayFor = item => {
       const r = item.getBoundingClientRect();
       const x = Math.max(0, r.left);
       const y = Math.max(0, r.top);
-      return Math.min(STAGGER, (Math.hypot(x, y) / maxDist) * STAGGER);
+      const base = Math.min(STAGGER, (Math.hypot(x, y) / maxDist) * STAGGER);
+      return base + itemJitter.get(item);
     };
 
     isCrossfading = true;
-
     items.forEach(item => {
       item.style.transition = `opacity ${FADE}ms ease`;
       item.style.transitionDelay = `${delayFor(item)}ms`;
       item.style.opacity = "0";
     });
-
     setTimeout(() => {
       doReorder();
       void grid.offsetHeight;
@@ -162,8 +168,8 @@
         });
         isCrossfading = false;
         updateFades();
-      }, STAGGER + FADE + 40);
-    }, STAGGER + FADE);
+      }, TOTAL + 40);
+    }, TOTAL);
   }
 
   filters.forEach(btn => {
