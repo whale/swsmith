@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Personal photography site for Stephen W. Smith (the user's dad). Plain static HTML/CSS/JS deployed to GitHub Pages at `stephenwsmith.com`. Hero bio + masonry photo grid + category filters + lightbox.
+Personal photography site for Stephen W. Smith (the user's dad). Plain static HTML/CSS/JS deployed to GitHub Pages at `stephenwadesmith.com`. Hero bio + masonry photo grid + category filters + lightbox.
 
 ## Key Files
 

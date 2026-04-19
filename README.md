@@ -1,6 +1,6 @@
 # Stephen W. Smith — Photography
 
-Personal photography site for Stephen W. Smith. Static site, deployed to GitHub Pages at [stephenwsmith.com](https://stephenwsmith.com).
+Personal photography site for Stephen W. Smith. Static site, deployed to GitHub Pages at [stephenwadesmith.com](https://stephenwadesmith.com).
 
 ## What this is
 
@@ -58,7 +58,7 @@ Full rules live at the top of `scripts/build-photos-json.mjs`.
 
 Under **repo → Settings → Pages**, set **Source = GitHub Actions**.
 
-For the custom domain `stephenwsmith.com`:
+For the custom domain `stephenwadesmith.com`:
 1. Add the domain in the Pages settings
 2. Point the domain's DNS `A` records to GitHub Pages IPs (185.199.108.153 – 185.199.111.153), and a `CNAME` for `www` pointing to `<username>.github.io`
 3. Check "Enforce HTTPS" after DNS propagates

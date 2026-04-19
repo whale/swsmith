@@ -13,7 +13,7 @@
 - [ ] Hand-review auto-categorization — script guesses from filenames; fix misses in `site/photos.json`
 - [ ] Get dad's email address and wire up the "Email me" link (currently `href="#"`)
 - [ ] Build the Drive → repo sync GitHub Action (task #10)
-- [ ] Create GitHub repo, push, configure Pages → custom domain `stephenwsmith.com`
+- [ ] Create GitHub repo, push, configure Pages → custom domain `stephenwadesmith.com`
 
 ## Done
 
