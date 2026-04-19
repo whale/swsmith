@@ -46,8 +46,13 @@
         <p>Engineering projects allowed for extensive travels, both foreign and domestic, over the past 40 years and photography has always been a supporting aspect of his work and enjoyable documentation of people and places. Photography is also a key complementing aspect of his hiking, hunting, fly fishing, camping, and other outdoor activities. He has often put down the fly rod for a photographic opportunity in the wilds of Colorado, Wyoming, Montana, or New Mexico.</p>
       </div>
       <div class="hero-links">
-        <a class="hero-link" href="mailto:email@stephenwadesmith.com">Email me</a>
-        <a class="hero-link" href="https://www.linkedin.com/in/stephen-w-smith-phd-10689012/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="hero-link hero-link-email" href="mailto:email@stephenwadesmith.com">
+          <svg class="hero-link-icon" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <polyline points="3 7 12 13 21 7"/>
+          </svg>
+          <span>Email me</span>
+        </a>
       </div>
     </section>
 
@@ -55,18 +60,20 @@
 
     <section class="photography">
       <div class="photography-header">
-        <div class="section-heading">
-          <p class="section-eyebrow">25 years of</p>
-          <h2 class="section-title">Photography</h2>
+        <div class="photography-header-inner">
+          <div class="section-heading">
+            <p class="section-eyebrow">25 years of</p>
+            <h2 class="section-title">Photography</h2>
+          </div>
+          <nav class="filters" aria-label="Photo categories">
+            <button class="filter is-active" data-category="all">Everything</button>
+            <button class="filter" data-category="landscape">Landscapes</button>
+            <button class="filter" data-category="wildlife">Wildlife</button>
+            <button class="filter" data-category="agriculture">Agriculture</button>
+            <button class="filter" data-category="people">People</button>
+            <button class="filter" data-category="general">General</button>
+          </nav>
         </div>
-        <nav class="filters" aria-label="Photo categories">
-          <button class="filter is-active" data-category="all">Everything</button>
-          <button class="filter" data-category="landscape">Landscapes</button>
-          <button class="filter" data-category="wildlife">Wildlife</button>
-          <button class="filter" data-category="agriculture">Agriculture</button>
-          <button class="filter" data-category="people">People</button>
-          <button class="filter" data-category="general">General</button>
-        </nav>
       </div>
 
       <div class="grid" id="grid" role="list">
