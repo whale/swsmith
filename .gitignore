@@ -2,3 +2,13 @@ node_modules/
 .env
 .env.local
 .DS_Store
+
+# Playwright MCP session artifacts
+.playwright-mcp/
+
+# Original photos — not served; kept locally / archived in Dropbox
+/photos/
+
+# Stray root-level screenshots from visual QA
+/*.jpeg
+/*.png

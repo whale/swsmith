@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephen W. Smith — Photography</title>
+  <meta name="description" content="Photography by Stephen W. Smith, agricultural engineer. 25 years of landscapes, wildlife, agriculture, and people from the American West and beyond.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500&family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page">
+
+    <section class="hero">
+      <header class="hero-heading">
+        <h1 class="name">Stephen W. Smith</h1>
+        <p class="title">Agricultural Engineer</p>
+      </header>
+      <div class="hero-portrait">
+        <img src="portrait.jpg" alt="Portrait of Stephen W. Smith" onerror="this.style.display='none'">
+      </div>
+      <div class="bio">
+        <p>Stephen Smith holds three engineering degrees and has been involved in numerous irrigation and water resources projects throughout his continuing professional career.</p>
+        <p>Engineering projects allowed for extensive travels, both foreign and domestic, over the past 40 years and photography has always been a supporting aspect of his work and enjoyable documentation of people and places. Photography is also a key complementing aspect of his hiking, hunting, fly fishing, camping, and other outdoor activities. He has often put down the fly rod for a photographic opportunity in the wilds of Colorado, Wyoming, Montana, or New Mexico.</p>
+      </div>
+      <div class="hero-links">
+        <a class="hero-link" href="mailto:email@stephenwsmith.com">Email me</a>
+        <a class="hero-link" href="https://www.linkedin.com/in/stephen-w-smith-phd-10689012/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="photography">
+      <div class="photography-header">
+        <div class="section-heading">
+          <p class="section-eyebrow">25 years of</p>
+          <h2 class="section-title">Photography</h2>
+        </div>
+        <nav class="filters" aria-label="Photo categories">
+          <button class="filter is-active" data-category="all">Everything</button>
+          <button class="filter" data-category="landscape">Landscapes</button>
+          <button class="filter" data-category="wildlife">Wildlife</button>
+          <button class="filter" data-category="agriculture">Agriculture</button>
+          <button class="filter" data-category="people">People</button>
+          <button class="filter" data-category="general">General</button>
+        </nav>
+      </div>
+
+      <div class="grid" id="grid" role="list">
+        <!-- Populated by app.js from photos.json -->
+      </div>
+    </section>
+
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <figure class="lightbox-stage">
+      <img class="lightbox-image" id="lightbox-image" alt="">
+    </figure>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

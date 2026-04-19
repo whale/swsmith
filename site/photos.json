@@ -1,0 +1,618 @@
+[
+  {
+    "file": "20190817_Wyoming_(50).jpg",
+    "category": "landscape",
+    "date": "2019-08-17",
+    "width": 1600,
+    "height": 929
+  },
+  {
+    "file": "20190815_GTNP_(8).jpg",
+    "category": "landscape",
+    "date": "2019-08-15",
+    "width": 1600,
+    "height": 1238
+  },
+  {
+    "file": "20181223_mule_deer_bucks.jpg",
+    "category": "wildlife",
+    "date": "2018-12-23",
+    "width": 1600,
+    "height": 1204
+  },
+  {
+    "file": "20180115_coyote_(17).jpg",
+    "category": "wildlife",
+    "date": "2018-01-15",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20171125_GSCNP_(73).jpg",
+    "category": "landscape",
+    "date": "2017-11-25",
+    "width": 1600,
+    "height": 1132
+  },
+  {
+    "file": "20171019_RMNP_(31).jpg",
+    "category": "landscape",
+    "date": "2017-10-19",
+    "width": 1600,
+    "height": 1206
+  },
+  {
+    "file": "20170916_MT_fly_fishing_(58).jpg",
+    "category": "people",
+    "date": "2017-09-16",
+    "width": 1066,
+    "height": 1600
+  },
+  {
+    "file": "20170913_NBR_(115).jpg",
+    "category": "landscape",
+    "date": "2017-09-13",
+    "width": 1600,
+    "height": 1012
+  },
+  {
+    "file": "20170802_mule_deer_fawn_(31).jpg",
+    "category": "wildlife",
+    "date": "2017-08-02",
+    "width": 1393,
+    "height": 1600
+  },
+  {
+    "file": "20170504_drone_(99).jpg",
+    "category": "agriculture",
+    "date": "2017-05-04",
+    "width": 1600,
+    "height": 1075
+  },
+  {
+    "file": "20170121_Louden_(14).jpg",
+    "category": "agriculture",
+    "date": "2017-01-21",
+    "width": 1600,
+    "height": 1099
+  },
+  {
+    "file": "20170102_mule_deer_(5).jpg",
+    "category": "wildlife",
+    "date": "2017-01-02",
+    "width": 1600,
+    "height": 1387
+  },
+  {
+    "file": "20161023_RMNP_(42).jpg",
+    "category": "landscape",
+    "date": "2016-10-23",
+    "width": 1600,
+    "height": 1439
+  },
+  {
+    "file": "20160702_(9).jpg",
+    "category": "general",
+    "date": "2016-07-02",
+    "width": 1217,
+    "height": 1600
+  },
+  {
+    "file": "20160627_BVF_(7).jpg",
+    "category": "landscape",
+    "date": "2016-06-27",
+    "width": 1600,
+    "height": 953
+  },
+  {
+    "file": "20160509_misc_021.jpg",
+    "category": "general",
+    "date": "2016-05-09",
+    "width": 1600,
+    "height": 1054
+  },
+  {
+    "file": "20160508_owl_005.jpg",
+    "category": "wildlife",
+    "date": "2016-05-08",
+    "width": 1368,
+    "height": 1600
+  },
+  {
+    "file": "20151206_HOAL_010.jpg",
+    "category": "agriculture",
+    "date": "2015-12-06",
+    "width": 1600,
+    "height": 1362
+  },
+  {
+    "file": "20150919_002.jpg",
+    "category": "general",
+    "date": "2015-09-19",
+    "width": 1600,
+    "height": 1378
+  },
+  {
+    "file": "20150918_GTNP_082.jpg",
+    "category": "landscape",
+    "date": "2015-09-18",
+    "width": 1600,
+    "height": 1365
+  },
+  {
+    "file": "20150815_misc_016-Pano.jpg",
+    "category": "landscape",
+    "date": "2015-08-15",
+    "width": 1600,
+    "height": 603
+  },
+  {
+    "file": "20150725_YNP_003.jpg",
+    "category": "landscape",
+    "date": "2015-07-25",
+    "width": 1600,
+    "height": 1059
+  },
+  {
+    "file": "20150722_MT_148.jpg",
+    "category": "landscape",
+    "date": "2015-07-22",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20150716_misc_042.jpg",
+    "category": "general",
+    "date": "2015-07-16",
+    "width": 1600,
+    "height": 1303
+  },
+  {
+    "file": "20150628_GTNP_100.jpg",
+    "category": "landscape",
+    "date": "2015-06-28",
+    "width": 1600,
+    "height": 1092
+  },
+  {
+    "file": "20150627_2_083.jpg",
+    "category": "general",
+    "date": "2015-06-27",
+    "width": 1600,
+    "height": 791
+  },
+  {
+    "file": "20150331_sandhill_crane_040.jpg",
+    "category": "wildlife",
+    "date": "2015-03-31",
+    "width": 1600,
+    "height": 901
+  },
+  {
+    "file": "20140929_Missouri_River_136.jpg",
+    "category": "landscape",
+    "date": "2014-09-29",
+    "width": 1600,
+    "height": 975
+  },
+  {
+    "file": "20140928_National_Bison_Range_021.jpg",
+    "category": "wildlife",
+    "date": "2014-09-28",
+    "width": 1600,
+    "height": 1159
+  },
+  {
+    "file": "20140928_National_Bison_Range_066.jpg",
+    "category": "wildlife",
+    "date": "2014-09-28",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20140816_misc_039.jpg",
+    "category": "general",
+    "date": "2014-08-16",
+    "width": 1600,
+    "height": 1202
+  },
+  {
+    "file": "20140811_Hoshiko_024.jpg",
+    "category": "agriculture",
+    "date": "2014-08-11",
+    "width": 1600,
+    "height": 1138
+  },
+  {
+    "file": "20140718_misc_017.jpg",
+    "category": "general",
+    "date": "2014-07-18",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20140710_MT_228.jpg",
+    "category": "landscape",
+    "date": "2014-07-10",
+    "width": 1600,
+    "height": 1189
+  },
+  {
+    "file": "20140613_misc_006.jpg",
+    "category": "general",
+    "date": "2014-06-13",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20140525_RMNP_013.jpg",
+    "category": "landscape",
+    "date": "2014-05-25",
+    "width": 1600,
+    "height": 1414
+  },
+  {
+    "file": "20140518_RMNP_035.jpg",
+    "category": "landscape",
+    "date": "2014-05-18",
+    "width": 1600,
+    "height": 1174
+  },
+  {
+    "file": "20140518_RMNP_080.jpg",
+    "category": "landscape",
+    "date": "2014-05-18",
+    "width": 1600,
+    "height": 1282
+  },
+  {
+    "file": "20140511_misc_019.jpg",
+    "category": "general",
+    "date": "2014-05-11",
+    "width": 1600,
+    "height": 1193
+  },
+  {
+    "file": "20140504_RMNP_017.jpg",
+    "category": "landscape",
+    "date": "2014-05-04",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20140223_Jalgaon_India_068.jpg",
+    "category": "agriculture",
+    "date": "2014-02-23",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20131201_unit_102_deer_hunting_009.jpg",
+    "category": "people",
+    "date": "2013-12-01",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20131029_HOAL_Wyoming_hunt_141.jpg",
+    "category": "people",
+    "date": "2013-10-29",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20131019_fly_fishing_on_the_Madison_212.jpg",
+    "category": "people",
+    "date": "2013-10-19",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130813_Frying_Pan_River_(92).jpg",
+    "category": "landscape",
+    "date": "2013-08-13",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130813_Frying_Pan_River_(96).jpg",
+    "category": "landscape",
+    "date": "2013-08-13",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130812_Frying_Pan_013.jpg",
+    "category": "landscape",
+    "date": "2013-08-12",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130721_RMNP_014.jpg",
+    "category": "landscape",
+    "date": "2013-07-21",
+    "width": 1600,
+    "height": 1030
+  },
+  {
+    "file": "20130715_BVF_owl_(11).jpg",
+    "category": "wildlife",
+    "date": "2013-07-15",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130702_camping_131.jpg",
+    "category": "people",
+    "date": "2013-07-02",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130617_misc_009.jpg",
+    "category": "general",
+    "date": "2013-06-17",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130331_North_Platte_River_049.jpg",
+    "category": "landscape",
+    "date": "2013-03-31",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20130330_Arikeree_turkey_033.jpg",
+    "category": "wildlife",
+    "date": "2013-03-30",
+    "width": 1600,
+    "height": 1091
+  },
+  {
+    "file": "20130105_BVF_mule_deer_(20).jpg",
+    "category": "wildlife",
+    "date": "2013-01-05",
+    "width": 1600,
+    "height": 1294
+  },
+  {
+    "file": "20121021_Louden_IC&RC_tour_(94).jpg",
+    "category": "agriculture",
+    "date": "2012-10-21",
+    "width": 1600,
+    "height": 1205
+  },
+  {
+    "file": "20121013_Madison_River_day_2_eagle_(38).jpg",
+    "category": "wildlife",
+    "date": "2012-10-13",
+    "width": 1600,
+    "height": 1161
+  },
+  {
+    "file": "20121011_Yellowstone_NP_D2_(65).jpg",
+    "category": "landscape",
+    "date": "2012-10-11",
+    "width": 1066,
+    "height": 1600
+  },
+  {
+    "file": "20120922_RMNP_elk_(30).jpg",
+    "category": "wildlife",
+    "date": "2012-09-22",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20120916_RMNP_elk_(55)_with_edits_10-4-12.jpg",
+    "category": "wildlife",
+    "date": "2012-09-16",
+    "width": 1600,
+    "height": 955
+  },
+  {
+    "file": "20120811_Smith_family_at_Steamboat_072.jpg",
+    "category": "people",
+    "date": "2012-08-11",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20120801_Yellowstone_NP_042.jpg",
+    "category": "landscape",
+    "date": "2012-08-01",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20120726_LIRF_UAV_flights_small_image.jpg",
+    "category": "agriculture",
+    "date": "2012-07-26",
+    "width": 1600,
+    "height": 1047
+  },
+  {
+    "file": "20120720_Salazar_Ranch_(32).jpg",
+    "category": "agriculture",
+    "date": "2012-07-20",
+    "width": 1066,
+    "height": 1600
+  },
+  {
+    "file": "20120716_bear_in_Cibola_NF_in_NM_(2)_with_SWS_edits_10-4-12.jpg",
+    "category": "wildlife",
+    "date": "2012-07-16",
+    "width": 1600,
+    "height": 1195
+  },
+  {
+    "file": "20120606_BVF_butterfly_(5).jpg",
+    "category": "wildlife",
+    "date": "2012-06-06",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20120526_BVF_birds_(9).jpg",
+    "category": "wildlife",
+    "date": "2012-05-26",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20120415_turkey_hunt_(19)_with_SWS_edits_10-4-12.jpg",
+    "category": "people",
+    "date": "2012-04-15",
+    "width": 1600,
+    "height": 1136
+  },
+  {
+    "file": "20120314_mule_deer_at_BVF_(23)_with_SWS_edits_10-4-12.jpg",
+    "category": "wildlife",
+    "date": "2012-03-14",
+    "width": 1600,
+    "height": 665
+  },
+  {
+    "file": "20120213_mule_deer_(12).jpg",
+    "category": "wildlife",
+    "date": "2012-02-13",
+    "width": 1442,
+    "height": 1600
+  },
+  {
+    "file": "20120111_Shanghai_(77).jpg",
+    "category": "general",
+    "date": "2012-01-11",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20111204_deer_hunting_in_unit_102_(44)_with_SWS_edits_10-4-12.jpg",
+    "category": "people",
+    "date": "2011-12-04",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20111204_deer_hunting_in_unit_102_(60)_with_SWS_edits_10-4-12.jpg",
+    "category": "people",
+    "date": "2011-12-04",
+    "width": 1600,
+    "height": 966
+  },
+  {
+    "file": "20110709_Delaney_Buttes_camping_(15).jpg",
+    "category": "people",
+    "date": "2011-07-09",
+    "width": 1600,
+    "height": 1029
+  },
+  {
+    "file": "20110529_muledeer_(5).jpg",
+    "category": "wildlife",
+    "date": "2011-05-29",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20110205_BVF_muledeer_(13).jpg",
+    "category": "wildlife",
+    "date": "2011-02-05",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20100807_owl_in_boxelder_(2).jpg",
+    "category": "wildlife",
+    "date": "2010-08-07",
+    "width": 1600,
+    "height": 1068
+  },
+  {
+    "file": "20100531_NCLPIC_Cornish_Plains_(6).jpg",
+    "category": "landscape",
+    "date": "2010-05-31",
+    "width": 1600,
+    "height": 1068
+  },
+  {
+    "file": "20090919_pivot_sprinkler_irrigation_sod_farm_(2).jpg",
+    "category": "agriculture",
+    "date": "2009-09-19",
+    "width": 1600,
+    "height": 1068
+  },
+  {
+    "file": "20090919_pivot_sprinkler_irrigation_sod_farm_(4).jpg",
+    "category": "agriculture",
+    "date": "2009-09-19",
+    "width": 1600,
+    "height": 1166
+  },
+  {
+    "file": "20090708_Rawah_Wilderness_(117).jpg",
+    "category": "landscape",
+    "date": "2009-07-08",
+    "width": 1068,
+    "height": 1600
+  },
+  {
+    "file": "20090708_Rawah_Wilderness_(39).jpg",
+    "category": "landscape",
+    "date": "2009-07-08",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20090701_sprinkler_irrigation_in_weld_Co._(0).jpg",
+    "category": "agriculture",
+    "date": "2009-07-01",
+    "width": 1600,
+    "height": 1098
+  },
+  {
+    "file": "20090701_sprinkler_irrigation_in_weld_Co._(19).jpg",
+    "category": "agriculture",
+    "date": "2009-07-01",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "20090510_Montana_fishing_(173).jpg",
+    "category": "people",
+    "date": "2009-05-10",
+    "width": 1600,
+    "height": 870
+  },
+  {
+    "file": "20090508__MT_barns_(12).jpg",
+    "category": "agriculture",
+    "date": "2009-05-08",
+    "width": 1600,
+    "height": 1068
+  },
+  {
+    "file": "grilling_vegetables.jpg",
+    "category": "general",
+    "date": null,
+    "width": 1600,
+    "height": 844
+  },
+  {
+    "file": "IMG_0737.jpg",
+    "category": "general",
+    "date": null,
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "IMG_0766.jpg",
+    "category": "general",
+    "date": null,
+    "width": 1600,
+    "height": 1125
+  }
+]
