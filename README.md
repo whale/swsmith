@@ -14,8 +14,8 @@ site/              # the deployed site
   style.css
   app.js
   photos.json      # manifest, built by scripts/build-photos-json.mjs
-  photos/          # web-optimized JPGs (1600px max, q82)
-  portrait.jpg     # hero portrait
+  photos/          # web-optimized gallery JPGs (1600px max, q82)
+  assets/          # site chrome — portrait, og image, favicons
 photos/            # originals — not served, untouched archive
 reference/         # bio, LinkedIn, design refs — not served
 scripts/
