@@ -12,6 +12,7 @@
 
   --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
   --font-sans: "Libre Franklin", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius: 4px;
   --page-pad: clamp(1.25rem, 3vw, 2.25rem);
@@ -149,10 +150,13 @@ a { color: inherit; }
 /* ---------- timeline section ---------- */
 
 .timeline {
+  --timeline-cols: minmax(0, 490fr) minmax(0, 552fr);
+  --timeline-col-gap: clamp(1.5rem, 5vw, 4.875rem);
+
   display: grid;
-  grid-template-columns: minmax(0, 490fr) minmax(0, 552fr);
-  column-gap: clamp(1.5rem, 5vw, 4.875rem);
-  row-gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: var(--timeline-cols);
+  column-gap: var(--timeline-col-gap);
+  row-gap: clamp(3rem, 7vw, 7.0625rem); /* Figma: 113px from title → entries */
   max-width: 1120px;
   margin: 0 auto;
   position: relative;
@@ -162,7 +166,7 @@ a { color: inherit; }
   grid-column: 1;
   grid-row: 1 / span 2;
   position: sticky;
-  top: 1.25rem;
+  top: clamp(2rem, 5vw, 4.5rem);
   align-self: start;
   width: max-content;
   max-width: 100%;
@@ -187,29 +191,41 @@ a { color: inherit; }
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2.6875rem;
+  display: grid;
+  grid-template-columns: var(--timeline-cols);
+  column-gap: var(--timeline-col-gap);
+  row-gap: 2.6875rem; /* Figma: 43px between entries */
   position: relative;
 }
 
+/* Vertical rail aligned with the dots — lives in the right column,
+   spans all rows, offset so it passes through the dot center. */
+.timeline-entries::before {
+  content: "";
+  grid-column: 2;
+  grid-row: 1 / -1;
+  width: 1px;
+  background: var(--divider);
+  justify-self: start;
+  margin-left: 2.5px;
+  z-index: 0;
+}
+
 .timeline-entry {
-  display: grid;
-  grid-template-columns: minmax(0, 490fr) minmax(0, 552fr);
-  column-gap: clamp(1.5rem, 5vw, 4.875rem);
-  align-items: flex-start;
+  display: contents;
 }
 
 .timeline-entry-year {
   grid-column: 1;
   justify-self: end;
+  align-self: start;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
   padding: 0.5rem 0.625rem;
-  font-family: var(--font-sans);
-  font-size: 17px;
+  font-family: var(--font-mono);
+  font-size: 14px;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
   color: var(--text);
   white-space: nowrap;
 }
@@ -220,6 +236,8 @@ a { color: inherit; }
   align-items: flex-start;
   gap: 1rem;
   padding-top: 0.2em;
+  position: relative;
+  z-index: 1;
 }
 
 .timeline-entry-rail {
@@ -497,20 +515,20 @@ div[class^="PIN_"] { display: none !important; }
   .timeline-entries {
     grid-column: 1;
     grid-row: 3;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
   }
+  .timeline-entries::before { display: none; }
   .timeline-entry {
-    grid-template-columns: 1fr;
-    row-gap: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
   }
   .timeline-entry-year {
-    grid-column: 1;
-    justify-self: start;
+    align-self: start;
   }
-  .timeline-entry-body {
-    grid-column: 1;
-    padding-top: 0;
-  }
+  .timeline-entry-body { padding-top: 0; }
   .timeline-entry-rail { display: none; }
 
   .photography-header {
