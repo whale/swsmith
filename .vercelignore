@@ -1,0 +1,8 @@
+photos/
+dropbox-staging/
+.screenshots/
+.playwright-mcp/
+scripts/node_modules
+.github/
+reference/
+*.md
