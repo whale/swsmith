@@ -158,7 +158,8 @@ a { color: inherit; }
   margin: var(--section-gap) auto 0;
   padding: clamp(3rem, 6vw, 5.875rem) 0;
   border-top: 1px solid var(--divider);
-  align-items: start;
+  /* align-items defaults to stretch so the image pair grows vertically
+     to match the copy column height. */
 }
 
 .consulting-copy {
@@ -180,8 +181,10 @@ a { color: inherit; }
 .consulting-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: clamp(0.5rem, 1vw, 1rem);
-  aspect-ratio: 551 / 286;
+  height: 100%;
+  min-height: 0;
 }
 
 .consulting-image {
@@ -189,6 +192,7 @@ a { color: inherit; }
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--placeholder);
+  min-height: 0;
 }
 
 .consulting-image img {
@@ -558,7 +562,8 @@ div[class^="PIN_"] { display: none !important; }
     row-gap: 2rem;
   }
   .consulting-images {
-    aspect-ratio: auto;
+    height: auto;
+    grid-template-rows: auto;
     gap: 0.5rem;
   }
   .consulting-image {
