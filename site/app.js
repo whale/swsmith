@@ -334,4 +334,26 @@
         console.error("Failed to load timeline.json:", err);
       });
   }
+
+  /* Scale the footer quote so its text width always matches the
+     container width (the 1120px two-column grid). */
+  const footerQuote = document.querySelector(".site-footer-quote");
+  function fitFooterQuote() {
+    if (!footerQuote) return;
+    const container = footerQuote.parentElement;
+    if (!container) return;
+    const probe = 100;
+    footerQuote.style.fontSize = `${probe}px`;
+    const textWidth = footerQuote.scrollWidth;
+    if (!textWidth) return;
+    const target = container.clientWidth;
+    const size = Math.floor((probe * target) / textWidth);
+    footerQuote.style.fontSize = `${Math.max(24, size)}px`;
+  }
+  if (footerQuote) {
+    const ro = new ResizeObserver(fitFooterQuote);
+    ro.observe(footerQuote.parentElement);
+    window.addEventListener("load", fitFooterQuote);
+    fitFooterQuote();
+  }
 })();

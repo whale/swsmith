@@ -144,7 +144,8 @@ a { color: inherit; }
   border: 0;
   height: 1px;
   background: var(--divider);
-  margin: var(--section-gap) 0 clamp(3rem, 6vw, 5.875rem);
+  max-width: 1120px;
+  margin: var(--section-gap) auto clamp(3rem, 6vw, 5.875rem);
 }
 
 /* ---------- timeline section ---------- */
@@ -152,14 +153,18 @@ a { color: inherit; }
 .timeline {
   --timeline-cols: minmax(0, 490fr) minmax(0, 552fr);
   --timeline-col-gap: clamp(1.5rem, 5vw, 4.875rem);
+  --timeline-pad-y: clamp(3rem, 6vw, 5.875rem);
 
   display: grid;
   grid-template-columns: var(--timeline-cols);
-  grid-template-rows: auto 1fr; /* header row, entries row — needed for grid-row: 1 / -1 on rail */
+  grid-template-rows: auto 1fr; /* header row, entries row */
   column-gap: var(--timeline-col-gap);
   row-gap: clamp(3rem, 7vw, 7.0625rem); /* Figma: 113px from title → entries */
   max-width: 1120px;
-  margin: 0 auto;
+  margin: var(--section-gap) auto;
+  padding: var(--timeline-pad-y) 0;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
   position: relative;
 }
 
@@ -197,6 +202,9 @@ a { color: inherit; }
   justify-self: start;
   align-self: stretch;
   margin-left: 2.5px;
+  /* Pull past the section padding so the rail meets the top + bottom borders */
+  margin-top: calc(-1 * var(--timeline-pad-y));
+  margin-bottom: calc(-1 * var(--timeline-pad-y));
   z-index: 0;
 }
 
@@ -209,7 +217,7 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: var(--timeline-cols);
   column-gap: var(--timeline-col-gap);
-  row-gap: 2.6875rem; /* Figma: 43px between entries */
+  row-gap: 4.5625rem; /* 73px (Figma 43 + 30 per feedback) */
   position: relative;
 }
 
@@ -246,7 +254,8 @@ a { color: inherit; }
   flex: 0 0 5.97rem;
   position: relative;
   align-self: flex-start;
-  margin-top: 0.7em;
+  /* 3px shim so the bar centers on the first line of the description text */
+  margin-top: calc(0.7em + 3px);
   height: 1px;
 }
 .timeline-entry-rail::before {
@@ -370,12 +379,14 @@ a { color: inherit; }
 
 .site-footer-quote {
   font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(2.25rem, 8vw, 5rem);
+  font-weight: 300;
+  font-size: clamp(2.25rem, 8vw, 5rem); /* initial; fitQuoteToContainer() in app.js rescales to fill width */
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text-strong);
   margin: 0 0 clamp(1.25rem, 2.5vw, 2rem);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .site-footer-attribution {
@@ -500,6 +511,7 @@ div[class^="PIN_"] { display: none !important; }
 
   .timeline {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr;
     row-gap: 1.5rem;
   }
   .timeline-title {
@@ -514,24 +526,53 @@ div[class^="PIN_"] { display: none !important; }
     justify-self: start;
     align-self: start;
   }
-  .timeline-rail { display: none; }
+  /* Rail spans the entries row only on mobile, anchored to the left edge */
+  .timeline-rail {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    margin-left: 3px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   .timeline-entries {
     grid-column: 1;
     grid-row: 3;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4.5625rem; /* 73px — same as desktop */
+    padding-left: 0;
   }
   .timeline-entry {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
+    display: grid;
+    grid-template-columns: 3.97rem 1fr; /* 63.5px rail column, per Figma mobile */
+    grid-template-areas:
+      "rail year"
+      ".    text";
+    column-gap: 0;
+    row-gap: 0.625rem;
+    align-items: start;
   }
   .timeline-entry-year {
+    grid-area: year;
+    justify-self: start;
     align-self: start;
   }
-  .timeline-entry-body { padding-top: 0; }
-  .timeline-entry-rail { display: none; }
+  .timeline-entry-body {
+    display: contents;
+  }
+  .timeline-entry-rail {
+    grid-area: rail;
+    display: block;
+    flex: none;
+    width: 2.97rem; /* 47.5px per Figma mobile */
+    height: 10px;
+    margin-top: calc(0.5em + 5px); /* center on year badge */
+    align-self: start;
+  }
+  .timeline-entry-text {
+    grid-area: text;
+  }
 
   .photography-header {
     position: static;
