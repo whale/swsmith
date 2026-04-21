@@ -344,13 +344,38 @@
     timelineList.replaceChildren(frag);
   }
 
+  /* Trim the vertical rail so it stops at the last dot, across all viewports. */
+  const timelineRailEl = document.querySelector(".timeline-rail");
+  function setTimelineRailEnd() {
+    if (!timelineRailEl) return;
+    const entries = document.querySelectorAll(".timeline-entry");
+    if (!entries.length) return;
+    const lastEntry = entries[entries.length - 1];
+    const lastDotBar = lastEntry.querySelector(".timeline-entry-rail");
+    if (!lastDotBar) return;
+    // Reset to measure natural top
+    timelineRailEl.style.height = "auto";
+    const railTop = timelineRailEl.getBoundingClientRect().top;
+    const dotBarRect = lastDotBar.getBoundingClientRect();
+    // .timeline-entry-rail has a 1px bar; its ::before dot sits at top: -2.5px
+    // width/height 6, so the dot center is at dotBar.top + 0.5
+    const dotCenterY = dotBarRect.top + 0.5;
+    const height = Math.max(0, dotCenterY - railTop);
+    timelineRailEl.style.height = `${height}px`;
+  }
+
   if (timelineList) {
     fetch("timeline.json", { cache: "no-cache" })
       .then(r => r.ok ? r.json() : Promise.reject(new Error(`timeline.json ${r.status}`)))
-      .then(renderTimeline)
+      .then(data => {
+        renderTimeline(data);
+        requestAnimationFrame(setTimelineRailEnd);
+      })
       .catch(err => {
         console.error("Failed to load timeline.json:", err);
       });
+    window.addEventListener("resize", () => requestAnimationFrame(setTimelineRailEnd), { passive: true });
+    window.addEventListener("load", setTimelineRailEnd);
   }
 
   /* Scale the footer quote so its text width always matches the

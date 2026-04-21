@@ -186,11 +186,12 @@ a { color: inherit; }
   width: 1px;
   background: var(--divider);
   justify-self: start;
-  align-self: stretch;
+  align-self: start;
   margin-left: 2.5px;
-  /* Pull past the section padding so the rail meets the top + bottom borders */
+  /* Top pulls past the section padding so the rail kisses the top border;
+     height is set by app.js so the rail ends at the last dot. */
   margin-top: calc(-1 * var(--timeline-pad-y));
-  margin-bottom: calc(-1 * var(--timeline-pad-y));
+  height: 100%;
   z-index: 0;
 }
 
@@ -507,16 +508,16 @@ div[class^="PIN_"] { display: none !important; }
     position: static;
     width: auto;
   }
-  /* Rail spans the entries row on mobile, anchored to the left edge, extends
-     down through the section padding so it meets the bottom border. */
+  /* Rail on mobile anchors to the left edge of the entries row; height is
+     set by app.js so the rail ends at the last dot. */
   .timeline-rail {
     grid-column: 1;
     grid-row: 2;
     justify-self: start;
-    align-self: stretch;
+    align-self: start;
     margin-left: 3px;
     margin-top: 0;
-    margin-bottom: calc(-1 * var(--timeline-pad-y));
+    height: 100%;
   }
   .timeline-entries {
     grid-column: 1;
