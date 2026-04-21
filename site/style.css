@@ -155,6 +155,7 @@ a { color: inherit; }
 
   display: grid;
   grid-template-columns: var(--timeline-cols);
+  grid-template-rows: auto 1fr; /* header row, entries row — needed for grid-row: 1 / -1 on rail */
   column-gap: var(--timeline-col-gap);
   row-gap: clamp(3rem, 7vw, 7.0625rem); /* Figma: 113px from title → entries */
   max-width: 1120px;
