@@ -30,6 +30,10 @@ const RULES = [
 ];
 
 function categorize(filename) {
+  // New Dropbox-synced format: stephen-smith-<category>-YYYY-MM-DD-<hash>.jpg
+  const managed = filename.match(/^stephen-smith-(landscape|wildlife|agriculture|people|general)-/i);
+  if (managed) return managed[1].toLowerCase();
+
   const name = filename.toLowerCase();
   for (const rule of RULES) {
     if (rule.keywords.some(k => name.includes(k))) return rule.category;
@@ -38,9 +42,13 @@ function categorize(filename) {
 }
 
 function parseDate(filename) {
-  const m = filename.match(/^(\d{4})(\d{2})(\d{2})/);
-  if (!m) return null;
-  return `${m[1]}-${m[2]}-${m[3]}`;
+  // New format: stephen-smith-<category>-YYYY-MM-DD-<hash>.jpg
+  const managed = filename.match(/^stephen-smith-[a-z]+-(\d{4})-(\d{2})-(\d{2})-/i);
+  if (managed) return `${managed[1]}-${managed[2]}-${managed[3]}`;
+  // Legacy format: YYYYMMDD prefix
+  const legacy = filename.match(/^(\d{4})(\d{2})(\d{2})/);
+  if (legacy) return `${legacy[1]}-${legacy[2]}-${legacy[3]}`;
+  return null;
 }
 
 /**

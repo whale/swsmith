@@ -9,6 +9,9 @@ node_modules/
 # Original photos — not served; kept locally / archived in Dropbox
 /photos/
 
+# Staging folder for one-time Dropbox upload; see scripts/organize-for-dropbox.mjs
+/dropbox-staging/
+
 # Stray root-level screenshots from visual QA
 /*.jpeg
 /*.png

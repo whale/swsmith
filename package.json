@@ -1,0 +1,12 @@
+{
+  "name": "stephen-wade-smith-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-from-dropbox.mjs",
+    "build-json": "node scripts/build-photos-json.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
