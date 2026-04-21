@@ -525,6 +525,7 @@ div[class^="PIN_"] { display: none !important; }
     flex-direction: column;
     gap: 4.5625rem;
     padding-left: 0;
+    padding-top: 50px; /* breathing room so the rail shows before the first dot */
   }
   .timeline-entry {
     display: grid;
