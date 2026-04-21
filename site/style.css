@@ -164,7 +164,7 @@ a { color: inherit; }
 .consulting-copy {
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* Figma: 48px between heading and body */
+  gap: 2.9375rem; /* matches .hero row-gap (heading → bio) */
 }
 
 .consulting-body {
@@ -196,6 +196,12 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Consulting's padding-bottom already provides the bottom gap for the
+   section — don't double up with the timeline's section-gap margin. */
+.consulting + .timeline {
+  margin-top: 0;
 }
 
 /* ---------- timeline section ---------- */
