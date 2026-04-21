@@ -185,6 +185,20 @@ a { color: inherit; }
   letter-spacing: -0.02em;
 }
 
+/* Vertical rail spans the full timeline section (header row + entries),
+   positioned at the start of the right column so it passes through the
+   dot centers. Inside an entry, dots sit on top of this rail. */
+.timeline-rail {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  width: 1px;
+  background: var(--divider);
+  justify-self: start;
+  align-self: stretch;
+  margin-left: 2.5px;
+  z-index: 0;
+}
+
 .timeline-entries {
   grid-column: 1 / -1;
   grid-row: 2;
@@ -196,19 +210,6 @@ a { color: inherit; }
   column-gap: var(--timeline-col-gap);
   row-gap: 2.6875rem; /* Figma: 43px between entries */
   position: relative;
-}
-
-/* Vertical rail aligned with the dots — lives in the right column,
-   spans all rows, offset so it passes through the dot center. */
-.timeline-entries::before {
-  content: "";
-  grid-column: 2;
-  grid-row: 1 / -1;
-  width: 1px;
-  background: var(--divider);
-  justify-self: start;
-  margin-left: 2.5px;
-  z-index: 0;
 }
 
 .timeline-entry {
@@ -512,6 +513,7 @@ div[class^="PIN_"] { display: none !important; }
     justify-self: start;
     align-self: start;
   }
+  .timeline-rail { display: none; }
   .timeline-entries {
     grid-column: 1;
     grid-row: 3;
@@ -519,7 +521,6 @@ div[class^="PIN_"] { display: none !important; }
     flex-direction: column;
     gap: 2rem;
   }
-  .timeline-entries::before { display: none; }
   .timeline-entry {
     display: flex;
     flex-direction: column;
