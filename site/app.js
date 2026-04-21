@@ -277,6 +277,24 @@
 
   const timelineList = document.getElementById("timeline");
 
+  /* Keep the "N years of" eyebrow in sync with Stephen's age
+     (born August 19, 1950). Rolls over on each birthday. */
+  const timelineEyebrow = document.getElementById("timeline-eyebrow");
+  if (timelineEyebrow) {
+    const BIRTH_YEAR = 1950;
+    const BIRTH_MONTH = 7; // August (0-indexed)
+    const BIRTH_DAY = 19;
+    const now = new Date();
+    let years = now.getFullYear() - BIRTH_YEAR;
+    if (
+      now.getMonth() < BIRTH_MONTH ||
+      (now.getMonth() === BIRTH_MONTH && now.getDate() < BIRTH_DAY)
+    ) {
+      years -= 1;
+    }
+    timelineEyebrow.textContent = `${years} years of`;
+  }
+
   function parseStartYear(yearStr) {
     const m = String(yearStr).match(/\d{4}/);
     return m ? parseInt(m[0], 10) : 0;

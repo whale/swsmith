@@ -157,9 +157,7 @@ a { color: inherit; }
 
   display: grid;
   grid-template-columns: var(--timeline-cols);
-  grid-template-rows: auto 1fr; /* header row, entries row */
   column-gap: var(--timeline-col-gap);
-  row-gap: clamp(3rem, 7vw, 7.0625rem); /* Figma: 113px from title → entries */
   max-width: 1120px;
   margin: var(--section-gap) auto;
   padding: var(--timeline-pad-y) 0;
@@ -170,25 +168,13 @@ a { color: inherit; }
 
 .timeline-title {
   grid-column: 1;
-  grid-row: 1 / span 2;
+  grid-row: 1;
   position: sticky;
   top: clamp(2rem, 5vw, 4.5rem);
   align-self: start;
   width: max-content;
   max-width: 100%;
-}
-
-.timeline-birthdate {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
-  align-self: end;
-  margin: 0;
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: 1.9;
-  letter-spacing: -0.02em;
+  z-index: 2;
 }
 
 /* Vertical rail spans the full timeline section (header row + entries),
@@ -196,7 +182,7 @@ a { color: inherit; }
    dot centers. Inside an entry, dots sit on top of this rail. */
 .timeline-rail {
   grid-column: 2;
-  grid-row: 1 / -1;
+  grid-row: 1;
   width: 1px;
   background: var(--divider);
   justify-self: start;
@@ -210,7 +196,7 @@ a { color: inherit; }
 
 .timeline-entries {
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 1;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -219,6 +205,7 @@ a { color: inherit; }
   column-gap: var(--timeline-col-gap);
   row-gap: 4.5625rem; /* 73px (Figma 43 + 30 per feedback) */
   position: relative;
+  z-index: 1;
 }
 
 .timeline-entry {
@@ -374,7 +361,7 @@ a { color: inherit; }
 .site-footer {
   max-width: 1120px;
   margin: 0 auto;
-  padding-top: clamp(2rem, 6vw, 5rem);
+  padding-top: 0;
 }
 
 .site-footer-quote {
@@ -511,8 +498,8 @@ div[class^="PIN_"] { display: none !important; }
 
   .timeline {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto 1fr;
-    row-gap: 1.5rem;
+    grid-template-rows: auto 1fr;
+    row-gap: 20px;
   }
   .timeline-title {
     grid-column: 1;
@@ -520,27 +507,23 @@ div[class^="PIN_"] { display: none !important; }
     position: static;
     width: auto;
   }
-  .timeline-birthdate {
+  /* Rail spans the entries row on mobile, anchored to the left edge, extends
+     down through the section padding so it meets the bottom border. */
+  .timeline-rail {
     grid-column: 1;
     grid-row: 2;
     justify-self: start;
-    align-self: start;
-  }
-  /* Rail spans the entries row only on mobile, anchored to the left edge */
-  .timeline-rail {
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: start;
+    align-self: stretch;
     margin-left: 3px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: calc(-1 * var(--timeline-pad-y));
   }
   .timeline-entries {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 2;
     display: flex;
     flex-direction: column;
-    gap: 4.5625rem; /* 73px — same as desktop */
+    gap: 4.5625rem;
     padding-left: 0;
   }
   .timeline-entry {
