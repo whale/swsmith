@@ -274,4 +274,64 @@
       console.error("Failed to load photos.json:", err);
       showError("Could not load photos.");
     });
+
+  const timelineList = document.getElementById("timeline");
+
+  function parseStartYear(yearStr) {
+    const m = String(yearStr).match(/\d{4}/);
+    return m ? parseInt(m[0], 10) : 0;
+  }
+
+  function appendRichText(parent, source) {
+    const parts = String(source).split(/(<em>[\s\S]*?<\/em>)/);
+    parts.forEach(part => {
+      if (!part) return;
+      if (part.startsWith("<em>") && part.endsWith("</em>")) {
+        const em = document.createElement("em");
+        em.textContent = part.slice(4, -5);
+        parent.appendChild(em);
+      } else {
+        parent.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
+  function renderTimeline(entries) {
+    if (!timelineList) return;
+    const sorted = [...entries].sort((a, b) => parseStartYear(a.year) - parseStartYear(b.year));
+    const frag = document.createDocumentFragment();
+    sorted.forEach(entry => {
+      const li = document.createElement("li");
+      li.className = "timeline-entry";
+
+      const year = document.createElement("span");
+      year.className = "timeline-entry-year";
+      year.textContent = entry.year;
+
+      const body = document.createElement("div");
+      body.className = "timeline-entry-body";
+
+      const rail = document.createElement("span");
+      rail.className = "timeline-entry-rail";
+      rail.setAttribute("aria-hidden", "true");
+
+      const text = document.createElement("p");
+      text.className = "timeline-entry-text";
+      appendRichText(text, entry.text);
+
+      body.append(rail, text);
+      li.append(year, body);
+      frag.appendChild(li);
+    });
+    timelineList.replaceChildren(frag);
+  }
+
+  if (timelineList) {
+    fetch("timeline.json", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : Promise.reject(new Error(`timeline.json ${r.status}`)))
+      .then(renderTimeline)
+      .catch(err => {
+        console.error("Failed to load timeline.json:", err);
+      });
+  }
 })();
